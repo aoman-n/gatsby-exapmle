@@ -19,7 +19,11 @@ const IndexPage = ({ data }) => {
       {data.allWorksYaml.edges.map(edge => {
         const work = edge.node
         return (
-          <div  key={work.title}> {work.title} - {work.category} - {work.year} </div>
+          <div key={work.title}>
+            <Link to={`/works/${work.slug}`}>
+              {work.title} - {work.category} - {work.year}
+            </Link>
+          </div>
         )
       })}
       {/* <Link to="/page-2/">Go to page 2</Link> */}
@@ -36,6 +40,7 @@ export const query = graphql`
           title
           category
           year
+          slug
         }
       }
     }

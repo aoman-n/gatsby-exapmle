@@ -2,7 +2,9 @@
   category: website
   year: 2019
   description: 令和に会おう
+  slug: greate-gw
 - title: Gatsbyでポートフォリオ
   category: website
   year: 2019
   description: Blogを作るためにGatsbyの使い方を学ぶ
+  slug: greate-blog
