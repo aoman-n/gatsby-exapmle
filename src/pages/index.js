@@ -11,22 +11,19 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-      <Title>Hi gatsby yeah</Title>
-      <p>Welcome to your new Gatsby site.</p>
-      <p>Now go build something great.</p>
-      <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-        <Image />
-      </div>
-      {data.allWorksYaml.edges.map(edge => {
-        const work = edge.node
-        return (
-          <div key={work.title}>
-            <Link to={`/works/${work.slug}`}>
+      <Title>Gatsbyでblogを作るための一歩</Title>
+      <ListTitle>work list</ListTitle>
+      <ListItem>
+        {data.allWorksYaml.edges.map(edge => {
+          const work = edge.node
+          return (
+            <StyledLink to={`/works/${work.slug}`}>
               {work.title} - {work.category} - {work.year}
-            </Link>
-          </div>
-        )
-      })}
+            </StyledLink>
+          )
+        })}
+      </ListItem>
+      <ImageFrame><Image /></ImageFrame>
       {/* <Link to="/page-2/">Go to page 2</Link> */}
       <Link to="/about/">Go to About</Link>
     </Layout>
@@ -34,8 +31,21 @@ const IndexPage = ({ data }) => {
 }
 
 const Title = styled.h1`
-  font-size: 2rem;
-  color: skyblue;
+  font-size: 1.8rem;
+  color: gray;
+`
+const ListTitle = styled.div`
+`
+const ListItem = styled.div`
+  margin-bottom: 10px;
+`
+const StyledLink = styled(Link)`
+  display: block;
+`
+const ImageFrame = styled.div`
+  max-width: 150px;
+  margin-top: 1.45rem;
+  margin-bottom: 1.45rem;
 `
 
 export const query = graphql`

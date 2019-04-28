@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `GraphQLの練習`,
+    title: `Gatsby Example`,
     description: `これはGraphQLのqueryを練習するためのものです`,
     author: `@aohiro`,
   },
